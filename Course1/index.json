@@ -1,13 +1,13 @@
 {
     "noindex": true,
-    "title": "Windows 8.1",
+    "title": "Windows 10 LTSC",
     "difficulty": "intermediate",
     "time": "240 minutes",
-    "description": "Automatically run Windows 8.1 x86 2 CPU / 3GB RAM",
+    "description": "Windows 10 LTSC x64 远程桌面",
     "details": {
         "steps": [
             {
-                "title": "Create Your Windows 8.1 RDP",
+                "title": "Windows 10 LTSC x64 远程桌面",
                 "text": "step1.md",
                 "courseData": "background.sh",
                 "code": "foreground.sh"
