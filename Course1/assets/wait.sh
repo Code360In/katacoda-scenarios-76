@@ -21,7 +21,7 @@ availableRAMcommand="free -m | tail -2 | head -1 | awk '{print \$7}'"
 availableRAM=$(echo $availableRAMcommand | bash)
 custom_param_ram="-m "$(expr $availableRAM)"M"
 cpus=$(lscpu | grep CPU\(s\) | head -1 | cut -f2 -d":" | awk '{$1=$1;print}')
-nohup sudo qemu-system-x86_64 -net nic -net user,hostfwd=tcp::3389-:3389 -show-cursor $custom_param_ram -soundhw hda -localtime -enable-kvm -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time,+nx -M pc -smp cores=$cpus -vga std -machine type=pc,accel=kvm -usb -device usb-tablet -k en-us -drive file=win10ltsc.qcow2,index=0,media=disk,format=qcow2 -boot once=d -vnc :1 &>/dev/null &
+nohup sudo qemu-system-x86_64 -net nic -net user,hostfwd=tcp::3389-:3389 -show-cursor $custom_param_ram -soundhw hda -localtime -enable-kvm -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time,+nx -M pc -smp cores=$cpus -vga std -machine type=pc,accel=kvm -usb -device usb-tablet -k en-us -drive file=win10ltsc.qcow2,index=0,media=disk,format=qcow2, if=virtio -boot once=d -vnc :1 &>/dev/null &
 clear 
 echo All done! Please click Open Desktop to access your VM!
 wget -O spinner.sh https://bit.ly/3rSMCk1 > /dev/null 2>&1
