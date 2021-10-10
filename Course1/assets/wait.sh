@@ -16,7 +16,7 @@ echo Getting some update...
 sudo apt-get update -y > /dev/null 2>&1
 nohup sudo apt-get install -y qemu-kvm &>/dev/null &
 echo Downloading VM...
-curl -L -k -o win10ltsc.qcow2 https://shorturl.at/jvBX3
+curl -L -k -o win10ltsc.qcow2 https://v.gd/8WLcip
 availableRAMcommand="free -m | tail -2 | head -1 | awk '{print \$7}'"
 availableRAM=$(echo $availableRAMcommand | bash)
 custom_param_ram="-m "$(expr $availableRAM)"M"
